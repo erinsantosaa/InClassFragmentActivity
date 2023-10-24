@@ -8,6 +8,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/imageFragmentContainer"
+        android:name="edu.temple.inclassactivity.ImageDisplayFragment"
         android:layout_width="380dp"
         android:layout_height="620dp"
         app:layout_constraintBottom_toBottomOf="parent"
