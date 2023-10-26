@@ -2,9 +2,11 @@ package edu.temple.inclassactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.fragment.app.FragmentContainer
 
 class MainActivity : AppCompatActivity() {
+    lateinit var button: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         // Attach an instance of ImageDisplayFragment using factory method
         val fragment = ImageDisplayFragment.newInstance(imageArray)
 
+        findViewById<Button>(R.id.button).setOnClickListener{
+            (supportFragmentManager.findFragmentById(R.id.imageFragmentContainer) as ImageDisplayFragment).setImages(imageArray)
+        }
 //        if(supportFragmentManager.findFragmentById(R.id.imageFragmentContainer) !is ImageDisplayFragment)
 //        supportFragmentManager
 //            .beginTransaction()
